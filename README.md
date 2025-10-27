@@ -77,7 +77,7 @@
 #### **Herramientas Adicionales**
 - **MetaMask**: Wallet para interacciones
 - **Polygonscan**: Explorador de bloques
-- **Faucets**: Para obtener tokens de prueba
+- **Faucets**: Servicios web que distribuyen tokens de testnet gratuitos para desarrollo
 
 ### 📋 Prerrequisitos del Sistema
 
@@ -266,7 +266,23 @@ Desplegar el contrato en Polygon Amoy testnet para pruebas en un entorno real.
 
 #### **Paso 2: Obtener MATIC de Testnet**
 
-**Faucets disponibles:**
+**¿Qué son los Faucets?**
+
+Un **faucet** (grifo en inglés) es un servicio web gratuito que distribuye pequeñas cantidades de criptomonedas de testnet. Son llamados "grifos" porque "gotean" tokens de prueba de forma controlada.
+
+**📋 Características de los faucets:**
+- **Gratuitos**: No requieren pago alguno
+- **Solo testnet**: Distribuyen tokens sin valor real
+- **Limitados**: Cantidad y frecuencia restringidas
+- **Verificación**: Algunos requieren captcha o verificación social
+- **Finalidad educativa**: Para desarrollo y pruebas
+
+**⚠️ Importante:**
+- Los tokens de testnet **NO tienen valor monetario**
+- Son únicamente para desarrollo y aprendizaje
+- No se pueden intercambiar por dinero real
+
+**Faucets disponibles para Polygon Amoy:**
 - [Polygon Faucet](https://faucet.polygon.technology/) 
 - [Alchemy Faucet](https://www.alchemy.com/faucets/polygon-amoy)
 - [QuickNode Faucet](https://faucet.quicknode.com/polygon/amoy)
@@ -470,6 +486,7 @@ Una **aplicación web** que permita a los usuarios interactuar con nuestro contr
 - [Polygonscan](https://polygonscan.com) - Mainnet
 
 #### **Faucets (Testnet)**
+Los faucets son servicios gratuitos que proporcionan tokens de testnet para desarrollo:
 - [Polygon Faucet](https://faucet.polygon.technology/)
 - [Alchemy Faucet](https://www.alchemy.com/faucets/polygon-amoy)
 - [QuickNode Faucet](https://faucet.quicknode.com/polygon/amoy)
