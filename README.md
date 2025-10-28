@@ -223,12 +223,16 @@ npm run test:local
 # Abrir consola interactiva
 npx hardhat console
 
-# Interactuar con el contrato
-> const c = await ethers.getContractAt("MiContrato", "DIRECCION_DEL_CONTRATO");
-> await c.saludo()
-> await c.setSaludo("Mi nuevo saludo")
-> await c.setMensajePersonal("Mi mensaje")
-> await c.getInfoUsuario("0x...")
+#  2. Desplegar el contrato
+> const MiContrato = await ethers.getContractFactory("MiContrato");
+> const contrato = await MiContrato.deploy();
+> await contrato.waitForDeployment();
+> const address = await contrato.getAddress();
+> console.log("Contrato desplegado en:", address);
+
+#  3. Interactuar
+> await contrato.saludo();
+> await contrato.setSaludo("Hola desde consola");
 ```
 
 ### 🎯 **¿Qué aprendiste?**
