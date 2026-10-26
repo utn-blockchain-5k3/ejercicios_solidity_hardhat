@@ -8,7 +8,8 @@
 4. [Tutorial: Desarrollo Local](#4-tutorial-desarrollo-local)
 5. [Tutorial: Deploy en Testnet](#5-tutorial-deploy-en-testnet)
 6. [Próxima Clase: Cliente Web](#6-próxima-clase-cliente-web)
-7. [Recursos y Referencias](#7-recursos-y-referencias)
+7. [Entrega en Moodle](#7-entrega-en-moodle)
+8. [Recursos y Referencias](#8-recursos-y-referencias)
 
 ---
 
@@ -120,7 +121,7 @@ npm test
 ✔ Debe cambiar el saludo global
 ... (más tests)
 
-15 passing (2s)
+16 passing (1s)
 ```
 
 ### 📁 Paso 3: Estructura del Proyecto
@@ -446,29 +447,6 @@ Una **aplicación web** que permita a los usuarios interactuar con nuestro contr
 - 📊 Ver estadísticas de interacciones
 - 📱 Diseño responsivo para móviles
 
-### 📋 Preparación para la Próxima Clase
-
-#### **✅ Asegúrate de tener:**
-
-1. **Contrato desplegado en Amoy**:
-   ```bash
-   # Si no lo hiciste, ejecuta:
-   npm run deploy:amoy
-   # Guarda la dirección del contrato
-   ```
-
-2. **POL en tu cuenta de prueba**:
-   - Al menos 0.1 POL para transacciones
-   - Usar faucets si es necesario
-
-3. **MetaMask configurado**:
-   - Red Amoy agregada
-   - Cuenta de prueba activa
-
-4. **Información del contrato**:
-   - Dirección del contrato desplegado
-   - ABI (se genera automáticamente)
-
 #### **🎯 Conceptos que veremos:**
 
 - **Web3 Integration**: Conectar frontend con blockchain
@@ -478,19 +456,46 @@ Una **aplicación web** que permita a los usuarios interactuar con nuestro contr
 - **Error Handling**: Manejo de errores de red y transacciones
 - **User Experience**: Feedback visual y estados de carga
 
-#### **💡 Estructura de la próxima clase:**
+---
 
-1. **Setup del proyecto frontend** (HTML/CSS/JS)
-2. **Integración con Ethers.js**
-3. **Conexión con MetaMask**
-4. **Lectura de datos del contrato**
-5. **Envío de transacciones**
-6. **Manejo de eventos y estados**
-7. **Deploy de la aplicación web**
+## 7. Entrega en Moodle
+
+### 📦 Qué entregar
+
+Para aprobar la actividad debés demostrar que desplegaste e interactuaste con el contrato en la **testnet Polygon Amoy**. La entrega es **individual** y se sube a Moodle como **un único archivo ZIP**.
+
+### ✅ Evidencia requerida (dentro del ZIP)
+
+1. **Dirección del contrato desplegado en Amoy** (en un archivo de texto o en el informe).
+2. **Captura del deploy exitoso**: salida de `npm run deploy:amoy` mostrando el mensaje `MiContrato desplegado en: 0x...`.
+3. **Captura de Polygonscan Amoy** (`https://amoy.polygonscan.com`): la página del contrato mostrando el *transaction hash* del deploy y el *block number*.
+4. **Captura de una transacción de escritura**: ejecución de `setSaludo(...)` desde la consola (`npx hardhat console --network amoy`) y su hash confirmado.
+5. **Breve informe** (`.md`, `.pdf` o `.txt`) que incluya:
+   - El RPC de Amoy utilizado (`drpc.org`, Alchemy u otro).
+   - El faucet usado para obtener POL de testnet.
+   - Un párrafo contando qué funcionó y qué dificultades aparecieron.
+
+> ⚠️ **No incluyas** tu archivo `.env` ni tu clave privada en el ZIP. La clave privada es personal y no debe compartirse nunca.
+
+### 📁 Formato del ZIP sugerido
+
+```
+apellido_nombre_clase11.zip
+├── informe.md            # o .pdf / .txt
+├── direccion_contrato.txt
+└── capturas/
+    ├── 01_deploy.png
+    ├── 02_polygonscan.png
+    └── 03_transaccion.png
+```
+
+### 📝 Nombre del archivo
+
+Subir el ZIP a la tarea correspondiente del aula de Moodle con el nombre: `apellido_nombre_clase11.zip`.
 
 ---
 
-## 7. Recursos y Referencias
+## 8. Recursos y Referencias
 
 ### 📚 Documentación Oficial
 
@@ -544,11 +549,5 @@ npx hardhat console --network amoy    # Consola Amoy
 **🎓 ¡Felicitaciones! Has completado el tutorial de Hardhat + Solidity + Polygon**
 
 Ahora tienes las bases para desarrollar aplicaciones blockchain profesionales. En la próxima clase integraremos todo esto en una aplicación web completa.
-
-**📝 Tarea para casa:**
-1. Practica con los comandos locales
-2. Despliega tu contrato en Amoy
-3. Explora el contrato en Polygonscan
-4. Prepara preguntas para la clase de frontend
 
 ¡Nos vemos en la próxima clase! 🚀
