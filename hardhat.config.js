@@ -10,8 +10,11 @@ module.exports = {
       accounts: [process.env.PRIVATE_KEY].filter(Boolean),
     },
     amoy: {
-      url: "https://rpc-amoy.polygon.technology",
+      // El endpoint publico rpc-amoy.polygon.technology fue deprecado.
+      // Definir AMOY_RPC_URL en .env (ej. un RPC de Alchemy) para mayor estabilidad.
+      url: process.env.AMOY_RPC_URL || "https://polygon-amoy.drpc.org",
       accounts: [process.env.PRIVATE_KEY].filter(Boolean),
+      chainId: 80002,
     },
     localhost: {
       url: "http://127.0.0.1:8545"

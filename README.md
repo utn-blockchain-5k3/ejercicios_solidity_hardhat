@@ -259,16 +259,16 @@ Desplegar el contrato en Polygon Amoy testnet para pruebas en un entorno real.
 
 2. **Agregar red Polygon Amoy**:
    - Nombre: `Polygon Amoy`
-   - RPC URL: `https://rpc-amoy.polygon.technology`
+   - RPC URL: `https://polygon-amoy.drpc.org` (o tu RPC de Alchemy; el endpoint público `rpc-amoy.polygon.technology` fue deprecado)
    - Chain ID: `80002`
-   - Símbolo: `MATIC`
+   - Símbolo: `POL` (Polygon renombró su token nativo de MATIC a POL en septiembre de 2024)
    - Explorador: `https://amoy.polygonscan.com`
 
 3. **Crear cuenta de prueba**:
    - ⚠️ **IMPORTANTE**: Crear una cuenta NUEVA solo para desarrollo
    - Nunca usar cuentas con fondos reales
 
-#### **Paso 2: Obtener MATIC de Testnet**
+#### **Paso 2: Obtener POL de Testnet**
 
 **¿Qué son los Faucets?**
 
@@ -287,14 +287,17 @@ Un **faucet** (grifo en inglés) es un servicio web gratuito que distribuye pequ
 - No se pueden intercambiar por dinero real
 
 **Faucets disponibles para Polygon Amoy:**
-- [Polygon Faucet](https://faucet.polygon.technology/) 
+
+> ⚠️ El faucet oficial propio de Polygon fue retirado. Usá faucets de terceros:
+
 - [Alchemy Faucet](https://www.alchemy.com/faucets/polygon-amoy)
 - [QuickNode Faucet](https://faucet.quicknode.com/polygon/amoy)
+- [GetBlock Faucet](https://getblock.io/faucet/matic-amoy/)
 
 **Proceso:**
 1. Copiar dirección de tu cuenta de prueba
 2. Visitar uno de los faucets
-3. Pegar dirección y solicitar MATIC
+3. Pegar dirección y solicitar POL
 4. Esperar confirmación (1-2 minutos)
 
 #### **Paso 3: Configurar Variables de Entorno**
@@ -311,7 +314,20 @@ nano .env
 ```bash
 PRIVATE_KEY=tu_clave_privada_de_cuenta_de_prueba
 POLYGONSCAN_API_KEY=opcional_para_verificacion
+AMOY_RPC_URL=https://polygon-amoy.drpc.org
 ```
+
+> 💡 **RPC de Amoy**: el endpoint público `https://rpc-amoy.polygon.technology` fue deprecado. En `hardhat.config.js` la red `amoy` debe leer el RPC desde `.env`:
+> ```js
+> amoy: {
+>   url: process.env.AMOY_RPC_URL || "https://polygon-amoy.drpc.org",
+>   accounts: [process.env.PRIVATE_KEY].filter(Boolean),
+>   chainId: 80002,
+> },
+> ```
+> Para una clase con muchas conexiones simultáneas conviene usar un RPC de **Alchemy** con API key gratuita (menos rate-limit) y ponerlo en `AMOY_RPC_URL`. Sin registro, `https://polygon-amoy.drpc.org` funciona como alternativa.
+
+> 🔒 **Seguridad**: usá una cuenta de MetaMask **nueva y exclusiva para pruebas**, nunca una con fondos reales. El archivo `.env` no debe subirse a GitHub (verificá que esté en `.gitignore`).
 
 **⚠️ Cómo obtener la clave privada:**
 1. MetaMask → Cuenta → Detalles de cuenta
@@ -324,7 +340,7 @@ POLYGONSCAN_API_KEY=opcional_para_verificacion
 #### **Paso 1: Verificar Configuración**
 
 ```bash
-# Verificar que tienes MATIC
+# Verificar que tienes POL
 # En MetaMask, verificar balance > 0
 
 # Verificar archivo .env
@@ -394,7 +410,7 @@ npx hardhat console --network amoy
 | Aspecto | Local | Testnet |
 |---------|-------|---------|
 | **Velocidad** | Instantáneo | 2-5 segundos |
-| **Costo** | Gratis | MATIC real (testnet) |
+| **Costo** | Gratis | POL de testnet (sin valor real) |
 | **Persistencia** | Temporal | Permanente |
 | **Explorador** | No disponible | Polygonscan |
 | **Forks/Reset** | Fácil | Imposible |
@@ -441,8 +457,8 @@ Una **aplicación web** que permita a los usuarios interactuar con nuestro contr
    # Guarda la dirección del contrato
    ```
 
-2. **MATIC en tu cuenta de prueba**:
-   - Al menos 0.1 MATIC para transacciones
+2. **POL en tu cuenta de prueba**:
+   - Al menos 0.1 POL para transacciones
    - Usar faucets si es necesario
 
 3. **MetaMask configurado**:
@@ -490,10 +506,10 @@ Una **aplicación web** que permita a los usuarios interactuar con nuestro contr
 - [Polygonscan](https://polygonscan.com) - Mainnet
 
 #### **Faucets (Testnet)**
-Los faucets son servicios gratuitos que proporcionan tokens de testnet para desarrollo:
-- [Polygon Faucet](https://faucet.polygon.technology/)
+Los faucets son servicios gratuitos que proporcionan tokens de testnet para desarrollo. El faucet oficial propio de Polygon fue retirado; se usan faucets de terceros:
 - [Alchemy Faucet](https://www.alchemy.com/faucets/polygon-amoy)
 - [QuickNode Faucet](https://faucet.quicknode.com/polygon/amoy)
+- [GetBlock Faucet](https://getblock.io/faucet/matic-amoy/)
 
 #### **Herramientas**
 - [MetaMask](https://metamask.io) - Wallet
