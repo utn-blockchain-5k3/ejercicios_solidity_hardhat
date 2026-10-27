@@ -510,9 +510,7 @@ Subir el ZIP a la tarea correspondiente del aula de Moodle con el nombre: `apell
 
 #### **Faucets (Testnet)**
 Los faucets son servicios gratuitos que proporcionan tokens de testnet para desarrollo. El faucet oficial propio de Polygon fue retirado; se usan faucets de terceros:
-- [Alchemy Faucet](https://www.alchemy.com/faucets/polygon-amoy)
-- [QuickNode Faucet](https://faucet.quicknode.com/polygon/amoy)
-- [GetBlock Faucet](https://getblock.io/faucet/matic-amoy/)
+- [GHOST Faucet](https://ghostchain.io/faucet/polygon-amoy/)
 
 #### **Herramientas**
 - [MetaMask](https://metamask.io) - Wallet
