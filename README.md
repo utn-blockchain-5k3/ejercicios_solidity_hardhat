@@ -328,11 +328,16 @@ AMOY_RPC_URL=https://polygon-amoy.drpc.org
 
 > 🔒 **Seguridad**: usá una cuenta de MetaMask **nueva y exclusiva para pruebas**, nunca una con fondos reales. El archivo `.env` no debe subirse a GitHub (verificá que esté en `.gitignore`).
 
-**⚠️ Cómo obtener la clave privada:**
-1. MetaMask → Cuenta → Detalles de cuenta
-2. Exportar clave privada
-3. Confirmar con contraseña
-4. **Copiar clave (sin 0x inicial)**
+🔐 Cómo obtener tu clave privada en MetaMask
+1. Abrí MetaMask desde Chrome.
+2. Hacé clic en el selector de cuentas, en la parte superior.
+3. Buscá la cuenta cuya clave privada querés obtener.
+4. Hacé clic en los tres puntos (⋮) que aparecen junto a esa cuenta.
+5. Seleccioná Detalles de la cuenta (Account details).
+6. Hacé clic en Clave privada (Private key).
+7. Ingresá tu contraseña de MetaMask.
+8. Mantené presionado el botón Hold to reveal Private Key (Mantener presionado para revelar la clave privada).
+9. MetaMask mostrará la clave privada, que podés copiar.
 
 ### 🚀 Paso a Paso para Deploy
 
