@@ -291,9 +291,7 @@ Un **faucet** (grifo en inglés) es un servicio web gratuito que distribuye pequ
 
 > ⚠️ El faucet oficial propio de Polygon fue retirado. Usá faucets de terceros:
 
-- [Alchemy Faucet](https://www.alchemy.com/faucets/polygon-amoy)
-- [QuickNode Faucet](https://faucet.quicknode.com/polygon/amoy)
-- [GetBlock Faucet](https://getblock.io/faucet/matic-amoy/)
+- [GHOST Faucet](https://ghostchain.io/faucet/polygon-amoy/)
 
 **Proceso:**
 1. Copiar dirección de tu cuenta de prueba
